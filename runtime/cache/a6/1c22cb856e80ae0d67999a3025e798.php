@@ -1,0 +1,5 @@
+<?php
+//000000000000
+ exit();?>
+a:1:{i:0;a:24:{s:11:"merchant_id";i:41;s:13:"merchant_name";s:42:"Fis.Salon美髮沙龍（观音桥总店）";s:13:"merchant_link";s:47:"https://www.meituan.com/jiankangliren/41963505/";s:4:"city";s:6:"重庆";s:8:"district";s:9:"观音桥";s:12:"merchant_img";s:89:"https://p0.meituan.net/wedding/ccd41cc23104afc7180098a3e1a7154d110896.jpg@275w_156h_1e_1c";s:17:"merchant_category";s:6:"美发";s:13:"merchant_food";i:0;s:14:"merchant_score";s:4:"5.00";s:16:"merchant_comment";i:14669;s:17:"merchant_avgprice";s:9:"000307.00";s:18:"merchant_telephone";s:24:"023-67003061/18580310104";s:16:"merchant_address";s:107:"江北区观音桥步行街红鼎国际A座3211（大融城店）（大融城后侧星天广场小吃街）";s:17:"merchant_worktime";s:22:"周一至周日
+全天";s:18:"merchant_discount1";s:30:"【超值套餐】无痕接发";s:24:"merchant_discount1_price";s:6:"888.00";s:24:"merchant_discount1_value";s:7:"1776.00";s:24:"merchant_discount1_sales";i:247;s:18:"merchant_discount2";s:53:"【品牌特惠】单人冷烫/染/柔顺/定位4选1";s:24:"merchant_discount2_price";s:6:"138.00";s:24:"merchant_discount2_value";s:6:"656.00";s:24:"merchant_discount2_sales";i:4954;s:22:"merchant_otherdiscount";s:16:"更多7个优惠";s:6:"status";i:0;}}

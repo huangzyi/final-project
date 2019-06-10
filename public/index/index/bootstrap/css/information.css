@@ -1,0 +1,177 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;
+}
+
+body{
+    height: 100%;
+    /*Image only BG fallback*/
+    background-color: orange;
+}
+a{
+    text-decoration:none;text-decoration:none;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-transition: color .2s linear,background .2s linear;
+    -moz-transition: color .2s linear,background .2s linear;
+    -webkit-transition: color .2s linear,background .2s linear;
+    transition: color .2s linear,background .2s linear
+}
+body {
+    font-family: "Microsoft YaHei",montserrat, arial, verdana;
+}
+ul{
+    list-style: none;
+}
+/*form styles*/
+.htmleaf-content{
+    height: 700px;
+}
+#msform {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+}
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    /*stacking fieldsets above each other*/
+    position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+    padding: 8px;
+    border: white;
+    /*border:1px solid #ccc;*/
+    border-radius: 3px;
+    margin: 3px 5px;
+    width: 60%;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei",montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+    float: right;
+    background-color: white;
+
+}
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#msform .list-name{
+    /*width: 20%;*/
+}
+#msform .list-value{
+    width: 40%;
+}
+#msform .lab-list-name{
+    width: 20%;
+    float: left;
+    text-align: right;
+    margin: 1px 5px;
+    /*color: #2C3E50;*/
+    vertical-align: middle;
+    padding: 8px;
+    display: inline-block;
+    font-size: 15px;
+}
+#msform .form-control{
+    height: 40px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#msform .lab-list-input{
+    padding: 8px;
+    border: white;
+    /*border:1px solid #ccc;*/
+    border-radius: 3px;
+    margin: 1px 5px;
+    width: 60%;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei",montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+    display: inline-block;
+}
+#msform .lab-list-input span{
+    display: inline-block;
+    text-align: left;
+}
+#msform .lab-list-input input{
+    display: inline-block;
+    float: left;
+    margin: 5px;
+}
+#msform .lab-list-input label{
+    width: 30%;
+    float: left;
+}
+#msform .list-group-item{
+    /*border: white;*/
+    height: 45px;
+    padding: 0;
+}
+
+@media screen and (max-width: 760px){
+    #msform fieldset{
+        padding: 0 0 20px 0;
+        width: 100%;
+        margin: 0;
+    }
+    #msform .list-group-item{
+        padding: 1px 2px;
+        /*border:black;*/
+    }
+    #msform input,#msform textarea{
+        width: 65%;
+        float: right;
+    }
+    #msform .lab-list-name{
+        width: 30%;
+        padding-left:0px ;
+        margin-left: 0;
+    }
+
+}
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
+}

@@ -1,0 +1,35 @@
+.group-menu li{
+    border: white;
+}
+.group-menu .lab-list-name{
+    width: 40%;
+    float: left;
+    text-align: right;
+}
+.group-menu input[type=text] {
+    width: 40%;
+    float: right;
+    text-align: left;
+}
+.group-menu textarea{
+    width: 40%;
+    float: right;
+    text-align: left;
+    overflow: hidden;
+}
+#msform table {
+    width: 100%;
+    text-align: center;
+}
+#msform table *{
+    text-align: center;
+}
+#msform td {
+    /*height: 10px;*/
+    /*width: 8%;*/
+    font-size: x-small;
+}
+#msform th {
+    /*width: 8%;*/
+    font-size:small ;
+}

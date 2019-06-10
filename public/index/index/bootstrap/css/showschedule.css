@@ -1,0 +1,27 @@
+.schedule-details{
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 0px;
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 5%;
+    /*stacking fieldsets above each other*/
+    position: absolute;
+}
+
+@media screen and (max-width: 820px) {
+    .schedule-details{
+        padding: 20px 0;
+        /*padding: 20px 0;*/
+        width: 100%;
+        margin: 0;
+    }
+    #msform .lab-list-name{
+        width: 30%;
+    }
+    #msform input{
+        width: auto;
+    }
+}

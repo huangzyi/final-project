@@ -1,0 +1,152 @@
+.dialog-container{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    top:70px;
+    background-color: #ecf0f1;
+    height: 100%;
+
+}
+.dialog-container .form-group{
+    height: 600px;
+}
+.dialog-container .form-title{
+    /*height: 42px;*/
+    font-size: 24px;
+    text-align: center;
+    padding-top: 5px;
+}
+.dialog-container .btn-friendother{
+    float: left;
+}
+
+.dialog-container textarea{
+    /*margin: 15px;*/
+    background-color:white;
+    border: 3px;
+    display: block;
+    margin:0 auto;
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    padding:2px;
+    outline: 0 none;
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    resize: none;
+}
+
+.dialog-container .dialog-show{
+
+
+}
+.dialog-container .dialog-input{
+
+}
+.dialog-container .btn-send{
+    /*position: fixed;*/
+    width: 100%;
+    height: 50px;
+    bottom: 10px;
+}
+.dialog-container .dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+.dialog-container .dropdown-content {
+    display: none;
+    position: absolute;
+    font-size: 13px;
+    background: #ecf0f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    float: right;
+}
+.dialog-container .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dialog-container  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.dialog-container ul li {
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative
+}
+
+.dialog-container  ul li a {
+    width: 100%;
+    padding: 14px 22px;
+    float: left;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    background: #ecf0f1;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    -o-transition: color .2s linear,background .2s linear;
+    -moz-transition: color .2s linear,background .2s linear;
+    -webkit-transition: color .2s linear,background .2s linear;
+    transition: color .2s linear,background .2s linear
+}
+
+/* Colors */
+
+.dialog-container ul li a  {
+    background: #ecf0f1;
+    color: #34495e;
+}
+
+.dialog-container .dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+.dialog-container>ul>li.active>a,
+.dialog-container>ul>li:hover>a  {
+    background: #e67e22;
+}
+
+.dialog-container>ul>li> a.selected {
+    background: #d35400;
+}
+.dialog-container>ul>li>a {
+    background: #ecf0f1;
+    color: #34495e;
+}
+.dialog-container>ul>li:hover {
+    background: #e67e22;
+}
+
+@media screen and (max-width: 760px) {
+    .dialog-container{
+        width: 100%;
+        left: 0;
+        top:0px;
+    }
+    .dialog-container .btn-send{
+        /*position: fixed;*/
+        bottom: 50px;
+        width: 100%;
+    }
+    /*.dialog-container .form-group{*/
+        /*height: 700px;*/
+    /*}*/
+}
+@media screen and (max-height: 700px){
+    .dialog-container .form-group{
+        height: 550px;
+    }
+}
+@media screen and (min-height: 800px){
+    .dialog-container .form-group{
+        height: 700px;
+    }
+}

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>约吧-显示聚会方案详情</title>
+	<link rel='stylesheet prefetch' href='bootstrap/css/normalize.css'>
+	<link rel="stylesheet" type="text/css" href="bootstrap/register/css/default.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/showfavorite.css">
+
+	<!--<link rel="stylesheet" type="text/css" href="bootstrap/css/default.css">-->
+	<!--<link rel='stylesheet prefetch' href='bootstrap/register/css/reset.css'>-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<!-- FontAwesome -->
+	<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-vertical-menu.css">
+	<!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/schedule.css">
+	<!--调整宽，引用便删，或使用acticle以内内容-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/showschedule.css">
+
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="htmleaf-header"style="">
+		<h1 class="text-lighter">聚会方案</h1>
+
+
+	</header>
+	{include file='common/vertical' }
+
+	<article class="schedule-details" style="padding: 0">
+
+		<form >
+			<!--style="display: none;" >-->
+			<!-- fieldsets -->
+			<fieldset>
+		<style type="text/css">
+			#msform input{
+				border: white;
+				height: 40px;
+			}
+			#msform li{
+				/*border: white;*/
+			}
+		</style>
+
+
+				<ul class="list-group" id="msform">
+					<li class="list-group-item">
+						<!--<a class="close" onclick="close()"><i class="fa fa-close"></i></a>-->
+					</li>
+					<li class="list-group-item">
+						<label class="text-info lab-list-name">名称</label>
+						<input type="text" name="schedule_name" class="edit" placeholder="方案名" value="{$schedule->schedule_name}" disabled/>
+						<!--<div class="alert alert-danger" role="alert" style="display: none;">-->
+						<!--<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>-->
+						<!--<span class="sr-only">Error:</span>-->
+						<!--Enter a valid email address-->
+						<!--</div>-->
+					</li>
+					<li class="list-group-item">
+						<label class="text-info lab-list-name">创建者</label>
+						<input type="text" name="schedule_founder" value="{$schedule->schedule_founder}" disabled/>
+					</li>
+					<li class="list-group-item">
+						<label class="text-info lab-list-name">城市</label>
+						<input type="text" name="city"  value="{$schedule->city}" disabled/>
+					</li><li class="list-group-item">
+						<label class="text-info lab-list-name">创建时间</label>
+						<input type="text" name="schedule_found_time"  value="{$schedule->schedule_found_time}" disabled/>
+					</li>
+					<li class="list-group-item">
+					<label class="text-info lab-list-name">人数</label>
+					<input type="text" name="schedule_number" placeholder="人数" class="edit"value="{$schedule->schedule_number}" disabled/>
+					</li>
+					<li class="list-group-item">
+						<label class="text-info lab-list-name">时间</label
+						>
+						<input type="text" name="schedule_time" id="flatpickr-tryme" value="{$schedule->schedule_time}" disabled/>
+
+					<!--<li class="list-group-item">-->
+					<!--<label class="text text-info lab-list-name">成员</label>-->
+					<!--<input name="member" placeholder="成员">-->
+					<!--</li>-->
+
+
+				</ul>
+
+				<ul class="list-group"id="merform">
+					{volist  name="merchant" id="m" key="i" empty="未选择"}
+					<input style="display: none" value="{$m.merchant_id}" name = "merchant_id">
+					<li class="list-group-item">
+						<h2 class="fs-title">
+							{switch name=$i }
+							{case value="1""}上午{/case}
+							{case value="2"}中饭{/case}
+							{case value="3"}下午{/case}
+							{case value="4"}晚饭{/case}
+							{default /}错误
+							{/switch}
+						</h2>
+					</li>
+
+					<li class="list-group-item">
+						{eq name="m" value="" }
+						<h1 class="">未选择</h1>
+						{else/}
+						<div data-poiid="2" data-cateid="1"  >
+
+							<div class="default-card">
+								<div class="default-list-item clearfix">
+
+									<div class="list-item-img">
+										<a href="{$m.merchant_link}">
+											<img src="{$m.merchant_img}" class="image">
+										</a>
+									</div>
+									<div class="list-item-desc">
+										<div class="list-item-desc-top">
+											<a href="{$m.merchant_link}" >{$m.merchant_name}</a>
+											<div class="item-eval-info clearfix">
+												<span class="avg-price">人均¥<!-- -->{$m.merchant_avgprice}|</span><span class="score" title="score-five">评价{$m.merchant_score}分|</span><span class="highlight comment">{$m.merchant_comment}人评论|</span>
+												<span class="telephone">电话：{$m.merchant_telephone}</span>
+											</div>
+											<div class="item-site-info clearfix">
+												<div class="address-info clearfix">
+													<span class="cate-info ellipsis">
+														<span title="{$m.merchant_category}">{$m.merchant_category}</span><span title="{$m.district}">|<!-- -->{$m.district}</span></span>
+													<span
+															title="{$m.merchant_address}"
+															class="address ellipsis">地址：{$m.merchant_address}</span></div>
+
+											</div>
+											<div class="item-bottom-info clearfix">
+												<div class="item-worktime-info">
+
+													<span class="worktime">{$m.merchant_worktime}</span>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="i-div">
+									<p><a class="i-left favorite" href="/thinkphp/public/index/favorite/favorite?merchant_id={$m.merchant_id}"><i class="fa fa-star-o"></i></a>
+										<a class="i-right"> <i class="fa fa-share"></i></a></p>
+								</div>
+								<!--&lt;!&ndash;只有在选择schedule的时候出现&ndash;&gt;-->
+								<!--<div class="div-choose">-->
+									<!--&lt;!&ndash;<input type="radio" name="merchant-choose" class="options-merchant"  value="1">&ndash;&gt;-->
+									<!--<input type="button" class="btn-primary btn-ms"-->
+										   <!--style="width: 80px;color: white" id="{$m.merchant_id}"-->
+										   <!--onclick="return getid(this.id)" value="选择">-->
+								<!--</div>-->
+							</div>
+						</div>
+						{/eq}
+					</li>
+					{/volist}
+					<!--<li class="list-group-item" style="height: 120px">-->
+						<!--<div class="i-div">-->
+						<!--<a class="i-left"><i class="fa fa-thumbs-o-up"></i><span>434</span></a>-->
+						<!--<a class="i-right"><i class="fa fa-thumbs-o-down"></i><span>434</span></a>-->
+						<!--</div>-->
+						<!--<input type="text" name="next" class="next action-button" value="返回">-->
+					<footer style="min-height: 80px;position: relative;bottom: 0;">
+						<input type="button" name="button" class="submit action-button" onclick="save()"value="修改" />
+
+							<!--<div style="min-width: 50px;"></div>-->
+						</footer>
+					</li>
+					<li class="list-group-item">
+					<!--</li>-->
+				</ul>
+				<!--<input type="submit" name="submit" class="submit action-button" value="确定" />-->
+
+
+			</fieldset>
+		</form>
+	</article>
+
+
+
+	<script>
+		var schedule = document.getElementsByTagName('input');
+		function save() {
+			sessionStorage.clear();
+			// var schedule = document.getElementsByTagName('input');
+			var schedule_name = schedule[0].value,
+					schedule_time = schedule[5].value,
+					schedule_city = schedule[2].value,
+					schedule_number = schedule[4].value,
+					schedule_morning = schedule[6].value,
+					schedule_noon = schedule[7].value,
+					schedule_afternoon = schedule[8].value,
+					schedule_dinner = schedule[9].value;
+					// alert("name:"+schedule_name+
+					// 		" time:"+schedule_time+
+					// 		" schedule_city"+schedule_city+
+					// 		" schedule_number "+schedule_number+
+					// 		" schedule_morning "+ schedule[6].value+
+					// 		" schedule_noon "+ schedule[7].value+
+					// 		" schedule_afternoon"+ schedule[8].value+
+					// 		" schedule_dinner "+ schedule[9].value);
+
+			sessionStorage.setItem('schedule_name', schedule_name);
+			sessionStorage.setItem('schedule_time', schedule_time);
+			sessionStorage.setItem('schedule_city', schedule_city);
+			sessionStorage.setItem('schedule_number', schedule_number);
+			sessionStorage.setItem('schedule_morning', schedule_morning);
+			sessionStorage.setItem('schedule_noon', schedule_noon);
+			sessionStorage.setItem('schedule_afternoon', schedule_afternoon);
+			sessionStorage.setItem('schedule_dinner', schedule_dinner);
+			window.location.href='schedule.html';
+		}
+	</script>
+	<script src="bootstrap/register/js/jquery-2.1.1.min.js"></script>
+	<script src="bootstrap/register/js/jquery.easing.min.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>

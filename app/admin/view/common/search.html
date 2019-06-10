@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<title>带排序功能的js masonry瀑布流插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/default.css">
+	<!-- FontAwesome -->
+	<!--<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">-->
+	<!-- Twitter Bootstrap -->
+	<!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">-->
+	<!--<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">-->
+	<!--<link rel="stylesheet" href="bootstrap/css/bootstrap-vertical-menu.css">-->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/showfavorite.css">
+	<link rel="stylesheet" href="bootstrap/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Hind:400,600|Open+Sans:300,600" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap/dist/sortable.min.css">
+  <script type="text/javascript" src="bootstrap/dist/sortable.min.js"></script>
+</head>
+<body>
+
+
+		  <form class="sortable" >
+		    <div class="container" style="background-color: orange">
+				<!--style=" background: #f4f4f4;padding: 3%;">-->
+		      <!--<div class="checkbox-favorite">-->
+  					<!--<label> <input type="checkbox" id="favorite" onclick="checkboxOnclick(this)"/>  收藏夹</label>-->
+			  <!--</div>-->
+				<!--<div class="div-search" >-->
+					<!--<input type="text" class="search-box">-->
+					<!--<button class="btn btn-success" style="float: left">搜索</button>-->
+				<!--</div>-->
+				<div class="wrapper">
+
+
+		        <div id="sortable" class="sjs-default">
+					{volist name="schedule" id="vo" empty="暂无" }
+		          <div data-sjsel="flatty" >
+		            <div class="card">
+		              <!--<img class="card__picture" src="bootstrap/masonry/images/item-1.jpg" alt="">-->
+		              <div class="card-infos">
+		                <h2 class="card__title">{$vo->schedule_name}</h2>
+		                <p class="card__text">
+						  <h6>schedule_id:{$vo->schedule_id}</h6>
+						  {eq name = "type" value="favor"}
+						  <h6>创建者：{$vo->schedule_founder}</h6>
+						  <h6>创建时间：{$vo->schedule_found_time}</h6>
+						  {else/}
+						  <h6>分享者：{$vo->share_founder}</h6>
+						  <h6>分享时间：{$vo->share_time}</h6>
+						  {/eq}
+						  <h6>聚会时间:{$vo->schedule_time}</h6>
+						  <h6>人数：{$vo->schedule_number}</h6>
+						  <h6>城市：{$vo->city}</h6>
+						  <h6>上午：{$vo->schedule_morning}</h6>
+						  <h6>中饭：{$vo->schedule_noon}</h6>
+						  <h6>下午：{$vo->schedule_afternoon}</h6>
+						  <h6>晚饭：{$vo->schedule_dinner}</h6>
+						  <input type="text" name="schedule_id" style="display: none" value="{$vo->schedule_id}"/>
+						  {neq name = "type" value="favor"}
+						  <h5><a class="i-left" href="/thinkphp/public/admin/share/comment?type={$type}&schedule_id={$vo->schedule_id}&link_id={$link_id}&share_founder={$vo->share_founder_id}&comment_type=share_up"><i class="fa fa-thumbs-o-up"></i><span>{$vo->share_up}</span></a>
+							  <a class="i-right" href="/thinkphp/public/admin/share/comment?type={$type}&schedule_id={$vo->schedule_id}&link_id={$link_id}&share_founder={$vo->share_founder_id}&comment_type=share_down"><i class="fa fa-thumbs-o-down"></i><span>{$vo->share_down}</span></a></h5>
+						  <h1> </h1>
+						  {/neq}
+						  <h5><a class="i-left" href="/thinkphp/public/admin/favorite/favorite?schedule_id={$vo->schedule_id}&user_id={$user_id}"><i class="fa fa-star-o" ></i></a>
+							  <a class="i-right" href="link.html?schedule_id={$vo->schedule_id}"><i class="fa fa-share"></i></a></h5>
+						  <h4><button class="btn btn-success" type="button" onclick="window.location.href='schedule?schedule_id={$vo->schedule_id}'">查看详情</button></h4>
+						  {neq name = "type" value="favor"}
+						  <h4><button class="btn btn-success" type="button" onclick="window.location.href='/thinkphp/public/admin/share/del?type={$type}&schedule_id={$vo->schedule_id}&link_id={$link_id}&share_founder={$vo->share_founder}'">取消分享</button></h4>
+						  {/neq}
+						  </p>
+		              </div>
+		            </div>
+		          </div>
+					{/volist}
+		        </div>
+		      </div>
+		    </div>
+		  </form>
+		  
+		
+
+	
+	<script type="text/javascript">
+	    document.querySelector('#sortable').sortablejs()
+	  </script>
+
+</body>
+</html>
